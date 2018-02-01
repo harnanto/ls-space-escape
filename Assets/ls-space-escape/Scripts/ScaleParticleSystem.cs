@@ -10,7 +10,7 @@ namespace SpaceEscape
 
         private void Start()
         {
-            ParticleScaler.Scale(GetComponent<ParticleSystem>(), scale);
+            ParticleScaler.Scale(GetComponent<ParticleSystem>(), scale, true);
         }
     }
 }
