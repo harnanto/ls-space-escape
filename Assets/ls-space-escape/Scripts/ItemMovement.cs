@@ -5,14 +5,10 @@ using UnityEngine;
 namespace SpaceEscape
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class RockMovement : MonoBehaviour
+    public class ItemMovement : MonoBehaviour
     {
         public GameObject effect;
-
-        public float minSpeed = -250f;
-        public float maxSpeed = -50f;
-        public float minScale = 1f;
-        public float maxScale = 10f;
+        public float speed = -100f;
 
         private Rigidbody m_Rigidbody;
         private PooledObjectDestroyer m_POD;
@@ -25,18 +21,14 @@ namespace SpaceEscape
 
         private void FixedUpdate()
         {
-            float spd = Random.Range(minSpeed, maxSpeed);
-            m_Rigidbody.velocity = Vector3.forward * spd;
-            m_Rigidbody.angularVelocity = new Vector3(10f, 10f, 10f);
+            m_Rigidbody.velocity = Vector3.forward * speed;
         }
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.collider.transform.root.gameObject.tag == "Player" ||
-                collision.collider.transform.root.gameObject.tag == "Bullet")
+            if (collision.collider.transform.root.gameObject.tag == "Player")
             {
                 m_POD.Destroy();
-
                 if (effect)
                 {
                     Instantiate(effect, transform.position, Quaternion.identity);

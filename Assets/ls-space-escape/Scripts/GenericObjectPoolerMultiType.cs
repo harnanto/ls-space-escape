@@ -45,7 +45,7 @@ namespace SpaceEscape
                 m_PooledGameObjects.Add(obj);
                 return obj;
             }
-            //Debug.Log("CVXXCV");
+
             return null;
         }
     }
@@ -74,7 +74,6 @@ namespace SpaceEscape
         {
             foreach (PooledGameObjectEntry pgoe in m_PooledGameObjectEntries)
             {
-                //Debug.Log(pgoe.name);
                 if(pgoe.name == name)
                 {
                     return pgoe.GetPooledGameObject();

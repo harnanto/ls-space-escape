@@ -9,7 +9,8 @@ namespace SpaceEscape
     {
         public Transform pivot;
         public Transform bulletSpawn;
-        public AudioSource collisionSound;
+        public AudioSource rockCollisionSound;
+        public AudioSource healthCollisionSound;
 
         public float movementSpeed = 50f;
         public float rollSpeed = 10f;
@@ -66,9 +67,18 @@ namespace SpaceEscape
             {
                 m_Health -= 1f;
 
-                if(collisionSound)
+                if(rockCollisionSound)
                 {
-                    collisionSound.Play();
+                    rockCollisionSound.Play();
+                }
+            }
+            else if (collision.collider.transform.root.gameObject.tag == "Health")
+            {
+                m_Health += 1f;
+
+                if(healthCollisionSound)
+                {
+                    healthCollisionSound.Play();
                 }
             }
         }
@@ -77,7 +87,7 @@ namespace SpaceEscape
         {
             speed = speed + m_SpaceshipInput.speed * acceleration * Time.deltaTime;
             speed = Mathf.Clamp(speed, 0f, 100f);
-            //Debug.Log(speed);
+
             m_Rigidbody.velocity = new Vector3(m_SpaceshipInput.horizontal, m_SpaceshipInput.vertical * (invertUpDown ? -1f : 1f), 0f) * movementSpeed;
         }
 

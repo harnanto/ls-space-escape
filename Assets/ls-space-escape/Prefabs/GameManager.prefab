@@ -82,7 +82,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 158fdff760673c34f9c7cbf3e49f1711, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.257
+  m_Volume: 0.117
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -175,6 +175,12 @@ MonoBehaviour:
     pooledAmount: 30
     willGrow: 1
     m_PooledGameObjects: []
+  - name: health
+    pooledGameObject: {fileID: 1102063468699724, guid: 20c04a52eeeb5704888e710da84fd924,
+      type: 2}
+    pooledAmount: 30
+    willGrow: 1
+    m_PooledGameObjects: []
 --- !u!114 &114877140314010256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,3 +198,5 @@ MonoBehaviour:
   gameOverScene: GameOver
   asteroidSpawnDistance: 500
   asteroidSpawnDelay: 0.5
+  healthSpawnDistance: 500
+  healthSpawnDelay: 6

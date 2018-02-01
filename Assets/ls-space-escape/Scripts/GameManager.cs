@@ -13,8 +13,11 @@ namespace SpaceEscape
         public string gameScene = "Game";
         public string gameOverScene = "GameOver";
 
-        public float asteroidSpawnDistance = 50f;
+        public float asteroidSpawnDistance = 500f;
         public float asteroidSpawnDelay = 0.5f;
+
+        public float healthSpawnDistance = 500f;
+        public float healthSpawnDelay = 0.5f;
 
         private static GameManager m_Instance = null;
         private GenericObjectPoolerMultiType m_Pooler;
@@ -23,6 +26,7 @@ namespace SpaceEscape
         private int m_Score = 0;
 
         private float m_AsteroidTimer = 0f;
+        private float m_HealthTimer = 0f;
 
         public int score
         {
@@ -73,12 +77,13 @@ namespace SpaceEscape
             }
             else if(m_CurrentSceneName == gameScene)
             {
-                /*
-                if (Input.GetKeyDown(KeyCode.Space))
+                m_HealthTimer += Time.deltaTime;
+                if(m_HealthTimer >= healthSpawnDelay)
                 {
-                    ShootAnAsteroid();
+                    SendAHealthItem();
+                    m_HealthTimer = 0f;
                 }
-                */
+
                 m_AsteroidTimer += Time.deltaTime;
                 if(m_AsteroidTimer >= asteroidSpawnDelay)
                 {
@@ -96,7 +101,6 @@ namespace SpaceEscape
         private void OnDestroy()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
-            //Debug.Log("XCVXCXCVXCVXCVXCVXCVXCVXCVXCVXCVXCVXCV");
         }
 
         private void OnSceneLoaded(Scene curScene, LoadSceneMode mode)
@@ -113,7 +117,6 @@ namespace SpaceEscape
             }
             else
             {
-                //pooler.ClearGameObjects();
                 if(pooler)
                 {
                     pooler.ClearGameObjects();
@@ -141,6 +144,30 @@ namespace SpaceEscape
             m_Score += 1;
         }
 
+        public void SendAHealthItem()
+        {
+            GameObject obj = pooler.GetPooledGameObject("health");
+            if (obj)
+            {
+                ItemMovement rm = obj.GetComponent<ItemMovement>();
+                if (rm)
+                {
+                    Vector3 pos = Camera.main.WorldToViewportPoint(player.transform.position);
+                    pos.x = Random.Range(0f, 0.7f);
+                    pos.y = Random.Range(0f, 0.7f);
+
+                    obj.transform.position = Camera.main.ViewportToWorldPoint(pos);
+                    obj.transform.position = new Vector3(
+                            obj.transform.position.x,
+                            obj.transform.position.y,
+                            healthSpawnDistance
+                        );
+
+                    obj.SetActive(true);
+                }
+            }
+        }
+
         public void ShootAnAsteroid()
         {
             GameObject obj = pooler.GetPooledGameObject("asteroid");
@@ -155,19 +182,18 @@ namespace SpaceEscape
                             scl,
                             scl
                         );
-                    //Debug.Log(scl);
+                    
                     Vector3 pos = Camera.main.WorldToViewportPoint(player.transform.position);
                     pos.x = Random.Range(0f, 1f);
                     pos.y = Random.Range(0f, 1f);
+
                     obj.transform.position = Camera.main.ViewportToWorldPoint(pos);
-                    //Debug.Log(obj.transform.position.x);
                     obj.transform.position = new Vector3(
                             obj.transform.position.x,
                             obj.transform.position.y,
                             asteroidSpawnDistance
                         );
 
-                    //obj.transform.position = new Vector3(2, 0, 0);
                     obj.SetActive(true);
                 }
             } 
