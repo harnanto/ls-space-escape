@@ -13,7 +13,7 @@ namespace SpaceEscape
 
         protected SpaceshipController m_SpaceshipController;
 
-        private void Start()
+        protected virtual void Start()
         {
             m_SpaceshipController = GetComponent<SpaceshipController>();
         }

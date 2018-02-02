@@ -132,6 +132,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1463925699531692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224696269949208490}
+  - component: {fileID: 222008902610207302}
+  - component: {fileID: 114995967834159486}
+  - component: {fileID: 114924078618591446}
+  m_Layer: 5
+  m_Name: CreditsButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1486093964825006
 GameObject:
   m_ObjectHideFlags: 1
@@ -234,6 +252,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1658977079453504
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224819555007626196}
+  - component: {fileID: 222345426782930314}
+  - component: {fileID: 114683601088395556}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1813580205607232
 GameObject:
   m_ObjectHideFlags: 1
@@ -313,7 +348,7 @@ GameObject:
   - component: {fileID: 114368625205562084}
   - component: {fileID: 114236470748886992}
   m_Layer: 5
-  m_Name: CreditsButton
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,7 +413,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Credits
+  m_Text: Quit
 --- !u!114 &114219281600666350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -509,14 +544,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Laser:\r\nRetro Lasers Laser Shot Silenced by bubaproducer (c) copyright
-    2012 Licensed under a \r\r\nCreative Commons Attribution (3.0) license. \r\r\nhttps://freesound.org/people/bubaproducer/sounds/151022/\r\n\r\nCrash:\r\nFoley
-    class metal crash 3.wav by Halleck (c) copyright 2011 Licensed under a Creative
-    \r\r\nCommons Attribution (3.0) license. http://freesound.org/people/Halleck/sounds/121657/\r\n\r\n\r\nReckless:\r\nReckless
-    by Dysfunction_AL (c) copyright 2016 Licensed under a Creative Commons \r\r\nAttribution
-    (3.0) license. http://dig.ccmixter.org/files/destinazione_altrove/54482 Ft: \r\r\nBlue_Wave_Theory\r\n\r\nExplosion_01:\r\nhttps://freesound.org/people/tommccann/sounds/235968/\r\n\r\nThis
-    game is using Permanent Marker font (https://fonts.google.com/specimen/Permanent\r\r\n+Marker?selection.family=Permanent+Marker)
-    under the Apache 2.0 license\r\r\n(http://www.apache.org/licenses/LICENSE-2.0.html)"
+  m_Text: "Laser:\r\nRetro Lasers Laser Shot Silenced (https://freesound.org/people/bubaproducer/sounds/151022/)
+    by bubaproducer (https://freesound.org/people/bubaproducer/) (c) copyright 2012
+    Licensed under a Creative Commons Attribution (3.0) license (https://creativecommons.org/licenses/by/3.0/us/legalcode).
+    \r\n\r\nCrash:\r\nFoley class metal crash 3.wav (http://freesound.org/people/Halleck/sounds/121657/)
+    by Halleck (https://freesound.org/people/Halleck/) (c) copyright 2011 Licensed
+    under a Creative Commons Attribution (3.0) license (https://creativecommons.org/licenses/by/3.0/us/legalcode).\r\n\r\n\r\nReckless:\r\nReckless
+    (http://dig.ccmixter.org/files/destinazione_altrove/54482 Ft: Blue_Wave_Theory)
+    by Dysfunction_AL (http://dig.ccmixter.org/people/destinazione_altrove) (c) copyright
+    2016 Licensed under a Creative Commons Attribution (3.0) license (https://creativecommons.org/licenses/by/3.0/us/legalcode)
+    / Converted to WAV. \r\n\r\nExplosion_01:\r\nhttps://freesound.org/people/tommccann/sounds/235968/\r\n\r\nPermanent
+    Marker:\r\nThis game is using Permanent Marker font (https://fonts.google.com/specimen/Permanent+Marker?selection.family=Permanent+Marker)
+    under the Apache 2.0 license(http://www.apache.org/licenses/LICENSE-2.0.html)."
 --- !u!114 &114236470748886992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -557,7 +596,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114301125276205956}
-        m_MethodName: toggleCreditsPanel
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -941,6 +980,39 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114683601088395556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658977079453504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 74da4a2c73a801749b0dc92de27ad820, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Credits
 --- !u!114 &114761336168368722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1016,6 +1088,91 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114924078618591446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1463925699531692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114995967834159486}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114301125276205956}
+        m_MethodName: toggleCreditsPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114995967834159486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1463925699531692}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &222008902610207302
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1463925699531692}
 --- !u!222 &222069361858298706
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1046,6 +1203,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1831024026196330}
+--- !u!222 &222345426782930314
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658977079453504}
 --- !u!222 &222365176097451266
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1163,16 +1326,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982888088844034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 80, y: -148.48502, z: 0}
+  m_LocalPosition: {x: 80, y: -178.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224060184146187066}
   m_Father: {fileID: 224521602683479978}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -148.48502}
+  m_AnchoredPosition: {x: 80, y: -178.49}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224250028460159176
@@ -1302,6 +1465,7 @@ RectTransform:
   - {fileID: 224288073544813910}
   - {fileID: 224679043780231364}
   - {fileID: 224616309301677598}
+  - {fileID: 224696269949208490}
   - {fileID: 224239047201447706}
   - {fileID: 224692616767469106}
   m_Father: {fileID: 0}
@@ -1398,12 +1562,31 @@ RectTransform:
   m_Children:
   - {fileID: 224295663066642276}
   m_Father: {fileID: 224521602683479978}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.625, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224696269949208490
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1463925699531692}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 80, y: -148.48502, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224819555007626196}
+  m_Father: {fileID: 224521602683479978}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -148.48502}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224743879417462936
 RectTransform:
@@ -1442,6 +1625,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.00002887845}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
+--- !u!224 &224819555007626196
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658977079453504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224696269949208490}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224857399540959136
 RectTransform:
   m_ObjectHideFlags: 1

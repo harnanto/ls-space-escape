@@ -29,6 +29,11 @@ namespace SpaceEscape
                 creditsPanel.SetActive(!creditsPanel.activeSelf);
             }
         }
+
+        public void Quit()
+        {
+            Application.Quit();
+        }
     }
 
 }

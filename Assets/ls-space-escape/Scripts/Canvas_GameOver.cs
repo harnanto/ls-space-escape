@@ -25,6 +25,11 @@ namespace SpaceEscape
         {
             GameManager.instance.InitScene();
         }
+
+        public void Quit()
+        {
+            Application.Quit();
+        }
     }
 
 }

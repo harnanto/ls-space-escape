@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4304551477506354}
   - component: {fileID: 54046366601362146}
-  - component: {fileID: 114711633170383274}
+  - component: {fileID: 114438496925788640}
   - component: {fileID: 114199376151241856}
   - component: {fileID: 114183448381514228}
   m_Layer: 0
@@ -987,6 +987,21 @@ MonoBehaviour:
   acceleration: 50
   speed: 0
   maxHealth: 10
+--- !u!114 &114438496925788640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1011344665382436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfd6221cb2055f408f631e9b9833872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal: 0
+  vertical: 0
+  speed: 0
+  shootABullet: 0
 --- !u!114 &114579930974399226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1030,21 +1045,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114711633170383274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1011344665382436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5f16aa0c785da4cb586bd4918317e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontal: 0
-  vertical: 0
-  speed: 0
-  shootABullet: 0
 --- !u!114 &114773058420297636
 MonoBehaviour:
   m_ObjectHideFlags: 1
