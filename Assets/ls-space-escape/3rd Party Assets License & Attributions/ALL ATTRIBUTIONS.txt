@@ -12,4 +12,4 @@ Explosion_01:
 https://freesound.org/people/tommccann/sounds/235968/
 
 Permanent Marker:
-This game is using Permanent Marker font (https://fonts.google.com/specimen/Permanent+Marker?selection.family=Permanent+Marker) under the Apache 2.0 license(http://www.apache.org/licenses/LICENSE-2.0.html).
+This game is using Permanent Marker font (https://fonts.google.com/specimen/Permanent+Marker?selection.family=Permanent+Marker) by Font Diner under the Apache 2.0 license(http://www.apache.org/licenses/LICENSE-2.0.html).

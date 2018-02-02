@@ -6,10 +6,10 @@ using UnityEngine.EventSystems;
 
 namespace SpaceEscape
 {
-    public class Canvas_MobileInput : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+    public class MobileAxis : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
     {
-        public Image m_BackgroundImage;
-        public Image m_JoystickImage;
+        private Image m_BackgroundImage;
+        private Image m_JoystickImage;
         private Vector3 m_InputVector;
 
         public float horizontal
@@ -28,10 +28,10 @@ namespace SpaceEscape
             }
         }
 
-        private void Start()
+        void Start()
         {
-            //m_BackgroundImage = GetComponent<Image>();
-            //m_JoystickImage = transform.GetChild(0).GetComponent<Image>();
+            m_BackgroundImage = GetComponent<Image>();
+            m_JoystickImage = transform.GetChild(0).GetComponent<Image>();
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -61,8 +61,6 @@ namespace SpaceEscape
                         m_InputVector.z * m_BackgroundImage.rectTransform.sizeDelta.y / 2
                     );
             }
-
-            Debug.Log(m_InputVector);
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -74,8 +72,6 @@ namespace SpaceEscape
         {
             m_InputVector = Vector3.zero;
             m_JoystickImage.rectTransform.anchoredPosition = Vector3.zero;
-
-            //Debug.Log(m_InputVector);
         }
     }
 }

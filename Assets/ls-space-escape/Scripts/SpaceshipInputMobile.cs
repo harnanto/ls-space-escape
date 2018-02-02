@@ -6,29 +6,23 @@ namespace SpaceEscape
 {
     public class SpaceshipInputMobile : SpaceshipInput
     {
-        private Canvas_MobileInput m_virtualJoystick;
+        private MobileAxis m_MobileAxis;
+        private MobileButton m_MobileButton;
 
         protected override void Start()
         {
             base.Start();
 
-            m_virtualJoystick = GameObject.Find("Canvas_MobileInput").GetComponent<Canvas_MobileInput>();
+            m_MobileAxis = GameObject.Find("MobileAxis").GetComponent<MobileAxis>();
+            m_MobileButton = GameObject.Find("MobileButton").GetComponent<MobileButton>();
         }
 
         public override void HandleInput()
         {
-            horizontal = m_virtualJoystick.horizontal;
-            vertical = m_virtualJoystick.vertical;
+            horizontal = m_MobileAxis.horizontal;
+            vertical = m_MobileAxis.vertical;
             speed = 0f;
-            shootABullet = false;
-
-            for (int i = 0; i < Input.touchCount; ++i)
-            {
-                if (Input.GetTouch(i).phase == TouchPhase.Began)
-                {
-                    shootABullet = true;
-                }
-            }
+            shootABullet = m_MobileButton.isButtonDown;
         }
     }
 }
