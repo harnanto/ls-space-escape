@@ -7,9 +7,11 @@ namespace SpaceEscape
 {
     public class MobileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
-        private bool m_IsDown;
-        private float m_DownTime;
+        public float delayBetweenDown = 0.5f;
 
+        private bool m_IsDown;
+        private float m_DelayTimer;
+        private bool m_ReadyToDown = false;
 
         public bool isButtonDown
         {
@@ -21,22 +23,26 @@ namespace SpaceEscape
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            this.m_IsDown = true;
-            this.m_DownTime = Time.realtimeSinceStartup;
+            m_ReadyToDown = true;
+            m_IsDown = true;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            this.m_IsDown = false;
+            m_ReadyToDown = false;
+            m_IsDown = false;
         }
 
         void Update()
         {
-            if (!this.m_IsDown) return;
-            if (Time.realtimeSinceStartup - this.m_DownTime > 2f)
+            m_DelayTimer += Time.deltaTime;
+
+            m_IsDown = false;
+
+            if (m_DelayTimer > delayBetweenDown && m_ReadyToDown)
             {
-                //print("Handle Long Tap");
-                this.m_IsDown = false;
+                m_IsDown = true;
+                m_DelayTimer = 0f;
             }
         }
     }
