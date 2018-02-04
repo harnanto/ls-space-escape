@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/ls-space-escape/Scenes/Splash.unity
+    guid: 9d0d3b21ef2030743abb8de27aadbca0
+  - enabled: 1
     path: Assets/ls-space-escape/Scenes/Init.unity
     guid: b1c84a389a89efe45b1c0677feb7fe5e
   - enabled: 1
@@ -14,6 +17,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ls-space-escape/Scenes/Game.unity
     guid: 5f1d535de4a1ac849998c2812f1dc6ee
-  - enabled: 1
-    path: Assets/ls-space-escape/Scenes/Splash.unity
-    guid: 9d0d3b21ef2030743abb8de27aadbca0

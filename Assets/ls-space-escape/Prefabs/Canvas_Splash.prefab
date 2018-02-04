@@ -81,9 +81,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Yet Another Game By
 
-    Rakifsul Games and Tools
+    <Your Company>
 
-    ( http://www.rakifsul.com/ )'
+    ( http://<yourwebsite/ )'
 --- !u!114 &114471777565889514
 MonoBehaviour:
   m_ObjectHideFlags: 1
