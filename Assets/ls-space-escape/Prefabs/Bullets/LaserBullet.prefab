@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbb02634bd1f044d904b82d1e061f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1967645187878464, guid: 30ab4ab77df1edc428b692d2bde80cf3, type: 2}
+  explosion: {fileID: 1072515491329522, guid: 704795a0a46553c4c9830be22182655d, type: 2}
   speed: 700
 --- !u!136 &136798791081633752
 CapsuleCollider:

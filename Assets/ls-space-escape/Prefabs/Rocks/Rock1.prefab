@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6698d9dd7b25f40bfc720b2a350880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 1967645187878464, guid: 582e7c26542a72f4c9b566e4df935c5f, type: 2}
+  effect: {fileID: 1072515491329522, guid: 2cf31bc49c15a054684d33c5d18cefd9, type: 2}
   minSpeed: -700
   maxSpeed: -200
   minScale: 1
