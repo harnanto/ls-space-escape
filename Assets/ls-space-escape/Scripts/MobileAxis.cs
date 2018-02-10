@@ -50,6 +50,8 @@ namespace SpaceEscape
                 position.x = position.x / m_BackgroundImage.rectTransform.sizeDelta.x;
                 position.y = position.y / m_BackgroundImage.rectTransform.sizeDelta.y;
 
+                
+
                 position = position / 0.5f;
 
                 m_InputVector = new Vector3(position.x, 0, position.y);
@@ -60,6 +62,8 @@ namespace SpaceEscape
                         m_InputVector.x * m_BackgroundImage.rectTransform.sizeDelta.x / 2,
                         m_InputVector.z * m_BackgroundImage.rectTransform.sizeDelta.y / 2
                     );
+
+                //Debug.Log(position + " - " + m_InputVector);
             }
         }
 

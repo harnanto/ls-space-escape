@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace SpaceEscape
 {
-    public class MobileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class MobileButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     {
         public float delayBetweenDown = 0.5f;
 
@@ -44,6 +44,9 @@ namespace SpaceEscape
                 m_IsDown = true;
                 m_DelayTimer = 0f;
             }
+
+            //Debug.Log(m_IsDown);
         }
     }
+
 }

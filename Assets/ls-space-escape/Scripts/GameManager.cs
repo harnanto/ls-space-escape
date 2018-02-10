@@ -5,42 +5,43 @@ using UnityEngine.SceneManagement;
 
 namespace SpaceEscape
 {
-    [RequireComponent(typeof(GenericObjectPoolerMultiType))]
     public class GameManager : MonoBehaviour
     {
         public GameObject player;
+       
         public string initScene = "Init";
         public string gameScene = "Game";
         public string gameOverScene = "GameOver";
 
-        public float asteroidSpawnDistance = 500f;
-        public float asteroidSpawnDelay = 0.5f;
 
-        public float healthSpawnDistance = 500f;
-        public float healthSpawnDelay = 0.5f;
-
-        private static GameManager m_Instance = null;
-        private GenericObjectPoolerMultiType m_Pooler;
-        private string m_CurrentSceneName;
-
-        private int m_Score = 0;
+        public float asteroidSpawnDistance = 50f;
+        public float asteroidSpawnDelay = 1f;
+        public float healthSpawnDistance = 50f;
+        public float healthSpawnDelay = 2f;
 
         private float m_AsteroidTimer = 0f;
         private float m_HealthTimer = 0f;
+        private int m_Score = 0;
 
-        public int score
-        {
-            get
-            {
-                return m_Score;
-            }
-        }
+        private static GameManager m_Instance = null;
+
+        private GenericObjectPoolerMultiType m_Pooler;
+
+        private string m_CurrentSceneName;
 
         public static GameManager instance
         {
             get
             {
                 return m_Instance;
+            }
+        }
+
+        public int score
+        {
+            get
+            {
+                return m_Score;
             }
         }
 
@@ -69,25 +70,52 @@ namespace SpaceEscape
             m_Pooler = GetComponent<GenericObjectPoolerMultiType>();
         }
 
+        private void OnDestroy()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene curScene, LoadSceneMode mode)
+        {
+            m_CurrentSceneName = curScene.name;
+
+            if (curScene.name == gameScene)
+            {
+                m_Score = 0;
+                pooler.PoolGameObjects();
+                if (!player)
+                {
+                    player = GameObject.FindGameObjectWithTag("Player");
+                }
+            }
+            else
+            {
+                if (pooler)
+                {
+                    pooler.ClearGameObjects();
+                }
+            }
+        }
+
         private void Update()
         {
-            if(m_CurrentSceneName == initScene)
+            if (m_CurrentSceneName == initScene)
             {
-               
+
             }
-            else if(m_CurrentSceneName == gameScene)
+            else if (m_CurrentSceneName == gameScene)
             {
                 m_HealthTimer += Time.deltaTime;
-                if(m_HealthTimer >= healthSpawnDelay)
+                if (m_HealthTimer >= healthSpawnDelay)
                 {
                     SendAHealthItem();
                     m_HealthTimer = 0f;
                 }
 
                 m_AsteroidTimer += Time.deltaTime;
-                if(m_AsteroidTimer >= asteroidSpawnDelay)
+                if (m_AsteroidTimer >= asteroidSpawnDelay)
                 {
-                    ShootAnAsteroid();
+                    SendAnAsteroid();
                     m_AsteroidTimer = 0f;
                 }
 
@@ -98,30 +126,9 @@ namespace SpaceEscape
             }
         }
 
-        private void OnDestroy()
+        public void AddScore()
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-
-        private void OnSceneLoaded(Scene curScene, LoadSceneMode mode)
-        {
-            m_CurrentSceneName = curScene.name;
-            if (curScene.name == gameScene)
-            {
-                m_Score = 0;
-                pooler.PoolGameObjects();
-                if(!player)
-                {
-                    player = GameObject.FindGameObjectWithTag("Player");
-                }
-            }
-            else
-            {
-                if(pooler)
-                {
-                    pooler.ClearGameObjects();
-                }
-            }
+            m_Score += 1;
         }
 
         public void InitScene()
@@ -137,11 +144,6 @@ namespace SpaceEscape
         public void GameOverScene()
         {
             SceneManager.LoadScene(gameOverScene);
-        }
-
-        public void AddScore()
-        {
-            m_Score += 1;
         }
 
         public void SendAHealthItem()
@@ -168,13 +170,13 @@ namespace SpaceEscape
             }
         }
 
-        public void ShootAnAsteroid()
+        public void SendAnAsteroid()
         {
             GameObject obj = pooler.GetPooledGameObject("asteroid");
-            if(obj)
+            if (obj)
             {
                 RockMovement rm = obj.GetComponent<RockMovement>();
-                if(rm)
+                if (rm)
                 {
                     float scl = Random.Range(rm.minScale, rm.maxScale);
                     obj.transform.localScale = new Vector3(
@@ -182,7 +184,7 @@ namespace SpaceEscape
                             scl,
                             scl
                         );
-                    
+
                     Vector3 pos = Camera.main.WorldToViewportPoint(player.transform.position);
                     pos.x = Random.Range(0f, 1f);
                     pos.y = Random.Range(0f, 1f);
@@ -196,7 +198,8 @@ namespace SpaceEscape
 
                     obj.SetActive(true);
                 }
-            } 
+            }
         }
     }
 }
+

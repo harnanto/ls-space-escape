@@ -11,17 +11,15 @@ namespace SpaceEscape
         public string nextScene = "Init";
 
         private float m_Timer = 0f;
-        private void Start()
-        {
-            
-        }
 
         private void Update()
         {
             m_Timer += Time.deltaTime;
-            if(m_Timer >= duration)
+
+            if(m_Timer > duration)
             {
                 m_Timer = 0f;
+
                 SceneManager.LoadScene(nextScene);
             }
         }

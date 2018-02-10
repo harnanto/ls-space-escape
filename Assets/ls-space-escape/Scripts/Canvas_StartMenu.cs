@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace SpaceEscape
 {
@@ -9,20 +9,12 @@ namespace SpaceEscape
     {
         public GameObject creditsPanel;
 
-        private void Start()
-        {
-        }
-
-        private void Update()
-        {
-        }
-
         public void GameScene()
         {
-            GameManager.instance.GameScene();
+            SceneManager.LoadScene("Game");
         }
 
-        public void toggleCreditsPanel()
+        public void ToggleCreditsPanel()
         {
             if(creditsPanel)
             {
@@ -35,5 +27,5 @@ namespace SpaceEscape
             Application.Quit();
         }
     }
-
 }
+

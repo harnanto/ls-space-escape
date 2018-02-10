@@ -20,9 +20,11 @@ namespace SpaceEscape
         public override void HandleInput()
         {
             horizontal = m_MobileAxis.horizontal;
+
             vertical = m_MobileAxis.vertical;
-            speed = 0f;
+           
             shootABullet = m_MobileButton.isButtonDown;
         }
     }
 }
+

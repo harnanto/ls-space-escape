@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SpaceEscape
@@ -11,19 +12,15 @@ namespace SpaceEscape
 
         private void Start()
         {
-            if(scoreText)
+            if (scoreText)
             {
                 scoreText.text = "Last Score: " + GameManager.instance.score.ToString();
             }
         }
 
-        private void Update()
+        public void GoToStartMenuScene()
         {
-        }
-
-        public void GoToStartMenu()
-        {
-            GameManager.instance.InitScene();
+            SceneManager.LoadScene("Init");
         }
 
         public void Quit()
@@ -31,5 +28,4 @@ namespace SpaceEscape
             Application.Quit();
         }
     }
-
 }

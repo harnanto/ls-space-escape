@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 74da4a2c73a801749b0dc92de27ad820
-timeCreated: 1500073075
+guid: 82af8c68f4ea8fd4faa378c0ef05eec2
+timeCreated: 1518130521
 licenseType: Free
 TrueTypeFontImporter:
+  externalObjects: {}
   serializedVersion: 4
   fontSize: 16
   forceTextureCase: -2

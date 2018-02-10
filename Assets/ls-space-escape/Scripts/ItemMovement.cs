@@ -4,10 +4,8 @@ using UnityEngine;
 
 namespace SpaceEscape
 {
-    [RequireComponent(typeof(Rigidbody))]
     public class ItemMovement : MonoBehaviour
     {
-        public GameObject effect;
         public float speed = -100f;
 
         private Rigidbody m_Rigidbody;
@@ -29,11 +27,8 @@ namespace SpaceEscape
             if (collision.collider.transform.root.gameObject.tag == "Player")
             {
                 m_POD.Destroy();
-                if (effect)
-                {
-                    Instantiate(effect, transform.position, Quaternion.identity);
-                }
             }
         }
     }
 }
+

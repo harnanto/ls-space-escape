@@ -17,14 +17,15 @@ namespace SpaceEscape
         {
             m_SpaceshipController = GetComponent<SpaceshipController>();
         }
+
         private void Update()
         {
-            if(!scoreText)
+            if (!scoreText)
             {
                 return;
             }
 
-            if(!healthImage)
+            if (!healthImage)
             {
                 return;
             }
@@ -34,3 +35,4 @@ namespace SpaceEscape
         }
     }
 }
+

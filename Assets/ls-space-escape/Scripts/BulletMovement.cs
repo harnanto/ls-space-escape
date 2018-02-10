@@ -29,12 +29,16 @@ namespace SpaceEscape
             if (collision.collider.transform.root.gameObject.tag == "Enemy")
             {
                 m_POD.Destroy();
-                if(explosion)
+
+                if (explosion)
                 {
                     Instantiate(explosion, transform.position, Quaternion.identity);
                 }
+
+                //tambah nilai
                 GameManager.instance.AddScore();
             }
         }
     }
 }
+

@@ -18,7 +18,7 @@ namespace SpaceEscape
         {
             for (int i = 0; i < pooledAmount; ++i)
             {
-                GameObject obj = (GameObject) GameObject.Instantiate(pooledGameObject);
+                GameObject obj = (GameObject)GameObject.Instantiate(pooledGameObject);
                 obj.SetActive(false);
                 m_PooledGameObjects.Add(obj);
             }
@@ -41,7 +41,7 @@ namespace SpaceEscape
 
             if (willGrow)
             {
-                GameObject obj = (GameObject) GameObject.Instantiate(pooledGameObject);
+                GameObject obj = (GameObject)GameObject.Instantiate(pooledGameObject);
                 m_PooledGameObjects.Add(obj);
                 return obj;
             }
@@ -56,7 +56,7 @@ namespace SpaceEscape
 
         public void PoolGameObjects()
         {
-            foreach(PooledGameObjectEntry pgoe in m_PooledGameObjectEntries)
+            foreach (PooledGameObjectEntry pgoe in m_PooledGameObjectEntries)
             {
                 pgoe.PoolGameObjects();
             }
@@ -74,13 +74,13 @@ namespace SpaceEscape
         {
             foreach (PooledGameObjectEntry pgoe in m_PooledGameObjectEntries)
             {
-                if(pgoe.name == name)
+                if (pgoe.name == name)
                 {
                     return pgoe.GetPooledGameObject();
                 }
             }
             return null;
         }
-
     }
 }
+

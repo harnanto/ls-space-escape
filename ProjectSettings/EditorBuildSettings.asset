@@ -7,13 +7,13 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/ls-space-escape/Scenes/Splash.unity
-    guid: 9d0d3b21ef2030743abb8de27aadbca0
+    guid: cbbc2d4f55ca6dd48ae73cdb322d9542
   - enabled: 1
     path: Assets/ls-space-escape/Scenes/Init.unity
-    guid: b1c84a389a89efe45b1c0677feb7fe5e
-  - enabled: 1
-    path: Assets/ls-space-escape/Scenes/GameOver.unity
-    guid: 8432d8cd538ffd7409a9401ff65d54c7
+    guid: dc70a602b68c5ad4faed83bae952f7f0
   - enabled: 1
     path: Assets/ls-space-escape/Scenes/Game.unity
-    guid: 5f1d535de4a1ac849998c2812f1dc6ee
+    guid: a28ddc127bc66f94fbc12061f807484f
+  - enabled: 1
+    path: Assets/ls-space-escape/Scenes/GameOver.unity
+    guid: 2d63bc6598549ea4c9e7c638b6d1680a

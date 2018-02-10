@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace SpaceEscape
 {
-    public abstract class SpaceshipInput : MonoBehaviour
+    public class SpaceshipInput : MonoBehaviour
     {
         public float horizontal = 0f;
         public float vertical = 0f;
-        public float speed = 0f;
         public bool shootABullet = false;
 
         protected SpaceshipController m_SpaceshipController;

@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace SpaceEscape
 {
-    [RequireComponent(typeof(Rigidbody))]
     public class SpaceshipController : MonoBehaviour
     {
+        public GameObject healthEffect;
+        public GameObject bullet;
         public Transform pivot;
         public Transform bulletSpawn;
         public AudioSource rockCollisionSound;
@@ -17,13 +18,12 @@ namespace SpaceEscape
         public float targetRotAngle = 45f;
         public bool invertUpDown = true;
         public float acceleration = 50f;
-        public float speed = 0f;
         public float maxHealth = 10f;
 
         private Rigidbody m_Rigidbody;
         private SpaceshipInput m_SpaceshipInput;
         private float m_Health = 0f;
-        
+        private float m_HFXTimer = 0f;
         public float health
         {
             get
@@ -37,6 +37,11 @@ namespace SpaceEscape
             m_Rigidbody = GetComponent<Rigidbody>();
             m_SpaceshipInput = GetComponent<SpaceshipInput>();
             m_Health = maxHealth;
+
+            if (healthEffect)
+            {
+                healthEffect.SetActive(false);
+            }
         }
 
         private void Update()
@@ -46,9 +51,19 @@ namespace SpaceEscape
                 m_SpaceshipInput.HandleInput();
             }
 
-            if(m_SpaceshipInput.shootABullet)
+            if (m_SpaceshipInput.shootABullet)
             {
                 ShootABullet();
+            }
+
+            m_HFXTimer += Time.deltaTime;
+
+            if(m_HFXTimer >= 2f)
+            {
+                if(healthEffect)
+                {
+                    healthEffect.SetActive(false);
+                }
             }
         }
 
@@ -67,7 +82,7 @@ namespace SpaceEscape
             {
                 m_Health -= 1f;
 
-                if(rockCollisionSound)
+                if (rockCollisionSound)
                 {
                     rockCollisionSound.Play();
                 }
@@ -76,18 +91,23 @@ namespace SpaceEscape
             {
                 m_Health += 1f;
 
-                if(healthCollisionSound)
+                m_Health = Mathf.Clamp(m_Health, 0f, maxHealth);
+
+                if (healthCollisionSound)
                 {
                     healthCollisionSound.Play();
+                }
+
+                if(healthEffect)
+                {
+                    healthEffect.SetActive(true);
+                    m_HFXTimer = 0f;
                 }
             }
         }
 
         void Translate()
         {
-            speed = speed + m_SpaceshipInput.speed * acceleration * Time.deltaTime;
-            speed = Mathf.Clamp(speed, 0f, 100f);
-
             m_Rigidbody.velocity = new Vector3(m_SpaceshipInput.horizontal, m_SpaceshipInput.vertical * (invertUpDown ? -1f : 1f), 0f) * movementSpeed;
         }
 
@@ -107,9 +127,9 @@ namespace SpaceEscape
             pivot.rotation = Quaternion.Lerp(pivot.rotation, targetRot, Time.fixedDeltaTime * rollSpeed);
         }
 
-        public void ShootABullet()
+        void ShootABullet()
         {
-            GameObject obj = GameManager.instance.pooler.GetPooledGameObject("laserbullet");
+            GameObject obj = GameManager.instance.pooler.GetPooledGameObject("bullet");
             if (obj)
             {
                 BulletMovement rm = obj.GetComponent<BulletMovement>();
@@ -122,3 +142,4 @@ namespace SpaceEscape
         }
     }
 }
+

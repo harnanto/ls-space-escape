@@ -16,10 +16,9 @@ namespace SpaceEscape
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
-            speed = 0f;
 
             //
-            if(Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0))
             {
                 m_ReadyToDown = true;
                 m_IsDown = true;
@@ -45,3 +44,4 @@ namespace SpaceEscape
         }
     }
 }
+

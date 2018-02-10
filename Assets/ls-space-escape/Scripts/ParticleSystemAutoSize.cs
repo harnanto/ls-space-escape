@@ -25,7 +25,7 @@ namespace SpaceEscape
             Resize();
         }
 
-        void Resize()
+        public void Resize()
         {
             Vector3 pos = Camera.main.WorldToViewportPoint(m_ParticleSystem.transform.position);
             pos.x = 1f;
@@ -36,9 +36,7 @@ namespace SpaceEscape
             Vector3 boxSize = psShape.scale;
             boxSize = new Vector3(tmp.x, tmp.y, 2f);
             psShape.scale = boxSize;
-
-            ParticleSystem.MainModule mainMod = m_ParticleSystem.main;
-            mainMod.startSpeed = 5f + player.GetComponent<SpaceshipController>().speed;
         }
     }
 }
+
