@@ -80,7 +80,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ffeafefd53d3dc743819ceec6c828910, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a76559fbee0967544938c0c22a5d09de, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.147
   m_Pitch: 1
@@ -193,12 +193,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  asteroid: {fileID: 1303417004101654, guid: 3e07c744017796a45b8ee9832a501a65, type: 2}
-  health: {fileID: 1729108494393050, guid: 058e57e6e7bccf44fad96ee905aa4741, type: 2}
   initScene: Init
   gameScene: Game
   gameOverScene: GameOver
   asteroidSpawnDistance: 200
   asteroidSpawnDelay: 2
   healthSpawnDistance: 50
-  healthSpawnDelay: 20
+  healthSpawnDelay: 2
