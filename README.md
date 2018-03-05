@@ -1,5 +1,13 @@
 # ls-space-escape
-Source codes for my tutorial: Cara Membuat Game Android Space Escape dengan Unity
+Source codes untuk tutorial video saya:
+http://www.lusfikars.space/2018/02/cara-membuat-game-android-dengan-unity-3d-space-escape.html
+
+# INFO PENTING
+
+Saya telah mengganti background music dari Reckless ke Orbital Colossus.
+
+Jika Anda tetap menginginkan background music yang sama dengan di video, silakan kunjungi link ini:
+http://dig.ccmixter.org/files/destinazione_altrove/54482
 
 # ALL ATTRIBUTIONS
 
