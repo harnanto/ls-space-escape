@@ -1,6 +1,5 @@
 # ls-space-escape
-Source codes untuk tutorial video saya:
-http://www.lusfikars.space/2018/02/cara-membuat-game-android-dengan-unity-3d-space-escape.html
+Airplane shooting game.
 
 # INFO PENTING
 
