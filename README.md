@@ -9,6 +9,8 @@ Saya telah mengganti background music dari Reckless ke Orbital Colossus.
 Jika Anda tetap menginginkan background music yang sama dengan di video, silakan kunjungi link ini:
 http://dig.ccmixter.org/files/destinazione_altrove/54482
 
+Sekarang, asset ini membutuhkan Unity versi 2018.2.3f1
+
 # ALL ATTRIBUTIONS
 
 Laser:
