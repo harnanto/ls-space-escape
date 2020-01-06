@@ -113,12 +113,24 @@ namespace SpaceEscape
 
         void ClampEdge()
         {
+            //dapatkan transform position
+            Vector3 theTransformPosition = transform.position;
+
+            //catat nilai z nya
             float theZ = transform.position.z;
-            Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-            pos.x = Mathf.Clamp01(pos.x);
-            pos.y = Mathf.Clamp01(pos.y);
-            transform.position = Camera.main.ViewportToWorldPoint(pos);
-            transform.position = new Vector3(transform.position.x, transform.position.y, theZ);
+
+            //konversi koordinat world ke viewport
+            Vector3 thePositionVP = Camera.main.WorldToViewportPoint(theTransformPosition);
+
+            //clamp x
+            thePositionVP.x = Mathf.Clamp01(thePositionVP.x);
+
+            //clamp y
+            thePositionVP.y = Mathf.Clamp01(thePositionVP.y);
+
+            //selesai
+            theTransformPosition = Camera.main.ViewportToWorldPoint(thePositionVP);
+            transform.position = new Vector3(theTransformPosition.x, theTransformPosition.y, theZ);
         }
 
         void Roll()
