@@ -8,17 +8,17 @@ namespace SpaceEscape
     public class PooledGameObjectEntry
     {
         public string name;
-        public GameObject pooledGameObject;
-        public int pooledAmount = 20;
-        public bool willGrow = false;
+        public GameObject gameObjectToBePooled;
+        public int amountOfPooledObjects = 15;
+        public bool growable = false;
 
         public List<GameObject> m_PooledGameObjects = new List<GameObject>();
 
         public void PoolGameObjects()
         {
-            for (int i = 0; i < pooledAmount; ++i)
+            for (int i = 0; i < amountOfPooledObjects; ++i)
             {
-                GameObject obj = (GameObject)GameObject.Instantiate(pooledGameObject);
+                GameObject obj = (GameObject)GameObject.Instantiate(gameObjectToBePooled);
                 obj.SetActive(false);
                 m_PooledGameObjects.Add(obj);
             }
@@ -39,9 +39,9 @@ namespace SpaceEscape
                 }
             }
 
-            if (willGrow)
+            if (growable)
             {
-                GameObject obj = (GameObject)GameObject.Instantiate(pooledGameObject);
+                GameObject obj = (GameObject)GameObject.Instantiate(gameObjectToBePooled);
                 m_PooledGameObjects.Add(obj);
                 return obj;
             }
